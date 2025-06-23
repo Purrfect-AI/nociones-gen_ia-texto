@@ -1,8 +1,14 @@
 import numpy as np
-import torch
-import torch.nn.functional as F
 import matplotlib.pyplot as plt
 import time
+import torch
+import torch.nn.functional as F
+import os
+
+# Configura Torch para usar la cantidad de threads igual a la cantidad de cores físicos menos uno.
+#  Si el host tiene 12 cores, usa 11 para torch.
+torch.set_num_threads(os.cpu_count() - 1)
+
 
 import idna
 
