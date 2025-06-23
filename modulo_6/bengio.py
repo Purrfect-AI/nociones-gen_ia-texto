@@ -7,6 +7,7 @@ import os
 
 # Configura Torch para usar la cantidad de threads igual a la cantidad de cores físicos menos uno.
 #  Si el host tiene 12 cores, usa 11 para torch.
+print(f'Setting number of cores to {os.cpu_count() - 1}')
 torch.set_num_threads(os.cpu_count() - 1)
 
 
